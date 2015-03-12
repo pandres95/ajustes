@@ -1,0 +1,14 @@
+rm output/*
+
+cd src
+for f in $(ls *.tex) ;
+    do echo $f | xargs -I ltx latex --output-directory=../output ltx;
+done;
+
+
+cd ../output
+for f in $(ls *.dvi) ;
+    do echo $f | xargs -I dvi dvips dvi;
+done;
+
+rm *.aux *.log *.dvi

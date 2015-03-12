@@ -9,7 +9,7 @@ done;
 
 cd ../output
 for f in $(ls *.dvi) ;
-    do echo $f | xargs -I dvi dvips dvi;
+    do echo $f | cut -d '.' -f1 | xargs -I f dvips -E f.dvi -o f.eps;
 done;
 
 rm *.aux *.log *.dvi

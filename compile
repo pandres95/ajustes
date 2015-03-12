@@ -1,4 +1,5 @@
-rm output/*
+rm -rf output
+mkdir output
 
 cd src
 for f in $(ls *.tex) ;
